@@ -19,8 +19,7 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: 20
-          cache: pnpm
-      - run: pnpm install --frozen-lockfile
+      - run: pnpm install --no-frozen-lockfile
       - run: npx expo config --type public > /tmp/expo-config.json
       - run: npx expo prebuild --platform android --non-interactive --no-install
       - run: chmod +x android/gradlew
